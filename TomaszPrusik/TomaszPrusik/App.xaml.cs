@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using TomaszPrusik.DependencyInjection;
 
 namespace TomaszPrusik
 {
@@ -13,5 +14,9 @@ namespace TomaszPrusik
     /// </summary>
     public partial class App : Application
     {
-    }
+		public App()
+		{
+			UnityRegister.Register();
+		}
+	}
 }
