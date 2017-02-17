@@ -1,0 +1,14 @@
+C:\Projects\TomaszPrusik\TomaszPrusik\bin\Debug\TomaszPrusik.exe.config
+C:\Projects\TomaszPrusik\TomaszPrusik\bin\Debug\TomaszPrusik.exe
+C:\Projects\TomaszPrusik\TomaszPrusik\bin\Debug\TomaszPrusik.pdb
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik.csprojResolveAssemblyReference.cache
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\MainWindow.g.cs
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\App.g.cs
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik_MarkupCompile.cache
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik_MarkupCompile.lref
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\MainWindow.baml
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik.g.resources
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik.Properties.Resources.resources
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik.csproj.GenerateResource.Cache
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik.exe
+C:\Projects\TomaszPrusik\TomaszPrusik\obj\Debug\TomaszPrusik.pdb

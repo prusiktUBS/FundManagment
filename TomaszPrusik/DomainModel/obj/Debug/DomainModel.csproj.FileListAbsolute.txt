@@ -1,0 +1,5 @@
+C:\Projects\TomaszPrusik\DomainModel\bin\Debug\DomainModel.dll
+C:\Projects\TomaszPrusik\DomainModel\bin\Debug\DomainModel.pdb
+C:\Projects\TomaszPrusik\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+C:\Projects\TomaszPrusik\DomainModel\obj\Debug\DomainModel.dll
+C:\Projects\TomaszPrusik\DomainModel\obj\Debug\DomainModel.pdb
