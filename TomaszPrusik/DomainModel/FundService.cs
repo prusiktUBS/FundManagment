@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,12 @@ namespace DomainModel
 {
     public class FundService : IFundService
     {
-        private readonly double _equityTc;
-        private readonly double _bondTc;
+        private readonly double _equityTc = FromPercentageString(ConfigurationManager.AppSettings["equityTc"]);
+        private readonly double _bondTc = FromPercentageString(ConfigurationManager.AppSettings["bondTc"]);
 
-        public FundService(double equityTc, double bondTc)
+        public static double FromPercentageString(string value)
         {
-            _equityTc = equityTc;
-            _bondTc = bondTc;
+            return double.Parse(value.Replace("%", "")) / 100;
         }
 
         public double SetMarketValue(double price, int quantity)

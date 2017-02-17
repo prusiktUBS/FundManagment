@@ -21,10 +21,19 @@ namespace TomaszPrusik
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly FundViewModel _viewModel = new FundViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
 			this.DataContext = new FundViewModel();
-		}        
+		}
+
+        
+
+        private void AddBond_OnClick(object sender, RoutedEventArgs e)
+        {
+            _viewModel.AddBond( _viewModel.BondPriceTextBox, 2, 2);
+        }
     }
 }

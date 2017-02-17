@@ -8,3 +8,8 @@ D:\Download\Fund\TomaszPrusik\DomainModel\bin\Debug\DomainModel.pdb
 D:\Download\Fund\TomaszPrusik\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
 D:\Download\Fund\TomaszPrusik\DomainModel\obj\Debug\DomainModel.dll
 D:\Download\Fund\TomaszPrusik\DomainModel\obj\Debug\DomainModel.pdb
+D:\Fund\Fund\TomaszPrusik\DomainModel\bin\Debug\DomainModel.dll
+D:\Fund\Fund\TomaszPrusik\DomainModel\bin\Debug\DomainModel.pdb
+D:\Fund\Fund\TomaszPrusik\DomainModel\obj\Debug\DomainModel.csprojResolveAssemblyReference.cache
+D:\Fund\Fund\TomaszPrusik\DomainModel\obj\Debug\DomainModel.dll
+D:\Fund\Fund\TomaszPrusik\DomainModel\obj\Debug\DomainModel.pdb

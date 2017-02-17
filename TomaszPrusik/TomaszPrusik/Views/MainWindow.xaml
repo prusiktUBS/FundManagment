@@ -57,61 +57,52 @@
             <TabItem Header="Equity" Margin="112,0,-115.5,-2">
                 <Grid Background="#FFE5E5E5" Margin="0,3,9,2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="31*"/>
-                        <ColumnDefinition Width="366*"/>
+                        <ColumnDefinition Width="46*"/>
+                        <ColumnDefinition Width="95*"/>
+                        <ColumnDefinition Width="447*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="label" 
-                           Content="Create new Fund" 
+                           Content="Buy Equity" 
                            HorizontalAlignment="Left" 
                            Margin="10,10,0,0" 
-                           VerticalAlignment="Top" 
-                           Grid.ColumnSpan="2"/>
-                    <Label x:Name="label_Copy" Content="Name" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox Text="FundName" HorizontalAlignment="Left" Height="23" Margin="70,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.Column="1"/>
-                    <Button Content="Add" HorizontalAlignment="Left" Margin="145,117,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-                    <Label Content="Mark as deleted" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="117"/>
-                    <CheckBox 
-                              Grid.Column="1" 
-                              HorizontalAlignment="Left" 
-                              Margin="70,88,0,0" 
-                              VerticalAlignment="Top"/>
-                    <Button Content="Refresh" Grid.Column="1" HorizontalAlignment="Left" Margin="235,117,0,0" VerticalAlignment="Top" Width="75" />
+                           VerticalAlignment="Top"/>
+                    <Label x:Name="PriceEquityLabel" Content="Price *" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="EquityPriceTextBox" Text="" HorizontalAlignment="Left" Height="23" Margin="70,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label x:Name="QuantityEquityLabel" Content="Quantity *" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="EquityQuantityTextBox" Text="" HorizontalAlignment="Left" Height="23" Margin="70,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button Name="AddEquity" Click="AddEquity_OnClick"
+                        Content="Confirm Trade" HorizontalAlignment="Left" Margin="45.439,130,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Bond" Margin="121.5,0,-125.5,-2">
                 <Grid Background="#FFE5E5E5" Margin="0,-1,-12,-4" RenderTransformOrigin="0.5,0.519">
-                    <Label  Content="Create new security" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
-                    <Label  Content="Security Name" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
-                    <Label  Content="Security Type" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
-                    <Label  Content="Price" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="AddBond" Click="AddBond_OnClick"
-                            Content="Add" 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="212*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="970*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Content="Buy Bond" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+                    <Label  Content="Price *" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
+                    <Button Click="AddBond_OnClick"
+                            x:Name="AddBond"
+                            Content="Confirm Trade" 
                             HorizontalAlignment="Left" 
-                            Margin="216,222,0,0" 
+                            Margin="167,144,0,0" 
                             VerticalAlignment="Top" 
-                            Width="75"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="122,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="122,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Grid HorizontalAlignment="Left" Height="292" Margin="372,25,0,0" VerticalAlignment="Top" Width="375">
+                            Width="75" Grid.ColumnSpan="3"/>
+                    <TextBox Name="BondPriceTextBox" HorizontalAlignment="Left" Height="23" Margin="122,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
+                    <Grid HorizontalAlignment="Left" Height="292" Margin="145,25,0,-34" VerticalAlignment="Top" Width="375" Grid.Column="2">
                         <Grid.Effect>
                             <DropShadowEffect/>
                         </Grid.Effect>
                     </Grid>
-                    <Label Content="Quantity" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
-                    <TextBox 
+                    <Label Content="Quantity *" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="BondQuantityTextBox"
                              HorizontalAlignment="Left" 
-                             Height="23" Margin="122,154,0,0" 
+                             Height="23" Margin="122,88,0,0" 
                              TextWrapping="Wrap" 
                              VerticalAlignment="Top" 
-                             Width="120"/>
-                    <ComboBox HorizontalAlignment="Left" 
-                              Margin="122,89,0,0" 
-                              VerticalAlignment="Top" 
-                              Width="169"/>
-                    <Label Content="Mark as Deleted" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Width="113"/>
-                    <CheckBox Content="" HorizontalAlignment="Left"
-                              Margin="122,187,0,0" 
-                              VerticalAlignment="Top"/>
+                             Width="120" Grid.ColumnSpan="3"/>
                 </Grid>
             </TabItem>
         </TabControl>
