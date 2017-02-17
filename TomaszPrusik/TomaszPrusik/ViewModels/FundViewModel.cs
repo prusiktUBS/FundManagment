@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using DomainModel;
 using DomainModel.interfaces;
+using Microsoft.Practices.ServiceLocation;
 
 namespace TomaszPrusik.ViewModels
 {
 	public class FundViewModel
 	{
-		private readonly IFundService _fundService;
+		private IFundService _fundService = ServiceLocator.Current.GetInstance<IFundService>();
 
 		public List<Fund> Funds = new List<Fund>();
 
-		public FundViewModel( )
-		{ 
-			_fundService = new FundService(double.Parse( ConfigurationManager.AppSettings[""] ),double.Parse( ConfigurationManager.AppSettings[""]));
+		public FundViewModel( FundService fundService )
+		{
+			_fundService = fundService;//(double.Parse( ConfigurationManager.AppSettings[""] ),double.Parse( ConfigurationManager.AppSettings[""]));
 		}
 		
 	}
