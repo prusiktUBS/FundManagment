@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TomaszPrusik.ViewModels;
 
 namespace TomaszPrusik
 {
@@ -23,11 +24,7 @@ namespace TomaszPrusik
         public MainWindow()
         {
             InitializeComponent();
-        }        
-
-        private void AddBond_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+			this.DataContext = new FundViewModel();
+		}        
     }
 }
