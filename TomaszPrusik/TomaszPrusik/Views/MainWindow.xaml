@@ -4,53 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TomaszPrusik"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="333.582" Width="1216.045">
+        Title="Tomasz Prusik" Height="333.582" Width="1216.045">
     <Grid>
-        <TabControl Margin="10,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="1031*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="10,0" Grid.ColumnSpan="2">
             <TabItem Header="Fund Manager" Margin="0,0,-4,-2">
-                <Grid Background="#FFE5E5E5">
-                    <Grid HorizontalAlignment="Left" Height="340" Margin="10,47,-40,0" VerticalAlignment="Top" Width="774">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="647*"/>
-                            <ColumnDefinition Width="127*"/>
-                        </Grid.ColumnDefinitions>
-                        <DataGrid x:Name="FM_sec_fund_list_dataGrid" VirtualizingStackPanel.IsVirtualizing="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="535" RenderTransformOrigin="0.087,-0.246" >
+                <Grid Background="#FFE5E5E5" Margin="10,1,-1,-1">
+                    <Grid HorizontalAlignment="Left" Height="221" Margin="10,47,0,0" VerticalAlignment="Top" Width="543">
+                        <DataGrid x:Name="FundDisplayGrid" IsReadOnly="True" VirtualizingStackPanel.IsVirtualizing="False" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="544" RenderTransformOrigin="0.087,-0.246" Margin="0,0,-12,0">
                             <DataGrid.RowStyle>
                                 <Style TargetType="DataGridRow">
                                     <Setter Property="Background" Value="LightGreen" />
                                     <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="Green"/>
-                                            <Setter Property="Foreground" Value="White"/>
-                                        </Trigger>
+                                        <DataTrigger Binding="{Binding State}" Value="1">
+                                            <Setter Property="Background" Value="Red"></Setter>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding State}" Value="0">
+                                            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+                                        </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </DataGrid.RowStyle>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
-                                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="SecTypeId" Binding="{Binding SecurityTypeId}" />
-                                <DataGridTextColumn Header="Price" Binding="{Binding Price}" />
-                                <DataGridTextColumn Header="Quantity" Binding="{Binding Qty}" />
-                                <DataGridTextColumn Header="MarketValue" Binding="{Binding MktValue}" />
-                                <DataGridTextColumn Header="TransactionCost" Binding="{Binding TransactionCost}" />
-                                <DataGridTextColumn Header="SecWeight %" Binding="{Binding SecWeight}" />
+                                <DataGridTextColumn MinWidth="50" Width="Auto"  x:Name="FundType" Header="Type" Binding="{Binding Type}" />
+                                <DataGridTextColumn MinWidth="70" Width="Auto"  Header="Name" Binding="{Binding Name}" />
+                                <DataGridTextColumn MinWidth="70" Width="Auto"  Header="Price" Binding="{Binding Price}" />
+                                <DataGridTextColumn MinWidth="70" Width="Auto"  Header="Quantity" Binding="{Binding Quantity}" />
+                                <DataGridTextColumn MinWidth="70" Width="Auto"  Header="MarketValue GBP" Binding="{Binding MarketValue}" />
+                                <DataGridTextColumn MinWidth="70" Width="Auto"  Header="TransactionCost" Binding="{Binding TransactionCost}" />
+                                <DataGridTextColumn MinWidth="70" Width="Auto"  x:Name="StockWeightGrid" Header="SecWeight %" Binding="{Binding _StockWeight, StringFormat={}{0:F2}%}" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
-                    <GroupBox x:Name="groupBox" Header="Fund Summary" HorizontalAlignment="Left" Margin="577,0,0,0" VerticalAlignment="Top" Height="145" Width="489" RenderTransformOrigin="-0.521,0.296">
-                        <DataGrid x:Name="fundSummary_dataGrid" VirtualizingStackPanel.IsVirtualizing="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="28,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-1" Width="405" Height="115">
+                    <GroupBox Header="Fund Summary" HorizontalAlignment="Left" Margin="647,7,0,0" VerticalAlignment="Top" Height="160" Width="398" RenderTransformOrigin="-0.521,0.296">
+                        <DataGrid x:Name="FundSummaryGrid" IsReadOnly="True" VirtualizingStackPanel.IsVirtualizing="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,10,-2,0" VerticalAlignment="Top" RenderTransformOrigin="0.333,-1" Width="378" Height="115">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="TypeName" Binding="{Binding Name}" />
-                                <DataGridTextColumn Header="TotalNumber" Binding="{Binding TotalNumber}" />
-                                <DataGridTextColumn Header="TotalStockWeight" Binding="{Binding TotalStockWeight}" />
-                                <DataGridTextColumn Header="TotalMktValue" Binding="{Binding TotalMktValue}" />
+                                <DataGridTextColumn Header="TypeName" Binding="{Binding Type}" />
+                                <DataGridTextColumn Header="TotalNumber" Binding="{Binding _TotalNumber}" />
+                                <DataGridTextColumn Header="TotalStockWeight" Binding="{Binding _TotalWeight, StringFormat={}{0:F2}%}" />
+                                <DataGridTextColumn Header="TotalMktValue" Binding="{Binding _TotalMv}" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
-                    <Label x:Name="label2_Copy" Content="Added Securities to the Fund" HorizontalAlignment="Left" Margin="23,21,0,0" VerticalAlignment="Top"/>
-
+                    <Label Content="UK Balanced Portfolio" HorizontalAlignment="Left" Margin="23,21,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
 
@@ -65,44 +66,43 @@
                            Content="Buy Equity" 
                            HorizontalAlignment="Left" 
                            Margin="10,10,0,0" 
-                           VerticalAlignment="Top"/>
+                           VerticalAlignment="Top"
+                           />
                     <Label x:Name="PriceEquityLabel" Content="Price *" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="EquityPriceTextBox" Text="" HorizontalAlignment="Left" Height="23" Margin="70,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.Column="1" Grid.ColumnSpan="2"/>
                     <Label x:Name="QuantityEquityLabel" Content="Quantity *" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="EquityQuantityTextBox" Text="" HorizontalAlignment="Left" Height="23" Margin="70,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="EquityQuantityTextBox" Text="" HorizontalAlignment="Left" Height="23" Margin="70,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.Column="1" Grid.ColumnSpan="2"/>
                     <Button Name="AddEquity" Click="AddEquity_OnClick"
-                        Content="Confirm Trade" HorizontalAlignment="Left" Margin="45.439,130,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
+                        Content="Confirm" HorizontalAlignment="Left" Margin="45.439,130,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Bond" Margin="121.5,0,-125.5,-2">
+            <TabItem Header="Buy Bond" Margin="121.5,0,-125.5,-2">
                 <Grid Background="#FFE5E5E5" Margin="0,-1,-12,-4" RenderTransformOrigin="0.5,0.519">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="212*"/>
                         <ColumnDefinition Width="15*"/>
                         <ColumnDefinition Width="970*"/>
                     </Grid.ColumnDefinitions>
-                    <Label  Content="Buy Bond" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
-                    <Label  Content="Price *" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
+                    <Label  Content="Buy Bond" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label  Content="Price *" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <Button Click="AddBond_OnClick"
                             x:Name="AddBond"
-                            Content="Confirm Trade" 
+                            Content="Confirm" 
                             HorizontalAlignment="Left" 
-                            Margin="167,144,0,0" 
+                            Margin="88,116,0,0" 
                             VerticalAlignment="Top" 
-                            Width="75" Grid.ColumnSpan="3"/>
-                    <TextBox Name="BondPriceTextBox" HorizontalAlignment="Left" Height="23" Margin="122,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
+                            Width="75" Grid.Column="2"/>
+                    <TextBox 
+                        Name="BondPriceTextBox" 
+                        HorizontalAlignment="Left" Height="23" Margin="150,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.ColumnSpan="3"/>
                     <Grid HorizontalAlignment="Left" Height="292" Margin="145,25,0,-34" VerticalAlignment="Top" Width="375" Grid.Column="2">
                         <Grid.Effect>
                             <DropShadowEffect/>
                         </Grid.Effect>
                     </Grid>
-                    <Label Content="Quantity *" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Quantity *" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
                     <TextBox Name="BondQuantityTextBox"
-                             HorizontalAlignment="Left" 
-                             Height="23" Margin="122,88,0,0" 
-                             TextWrapping="Wrap" 
-                             VerticalAlignment="Top" 
-                             Width="120" Grid.ColumnSpan="3"/>
+                             HorizontalAlignment="Left" Height="23" Margin="150,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" Grid.ColumnSpan="3"/>
                 </Grid>
             </TabItem>
         </TabControl>

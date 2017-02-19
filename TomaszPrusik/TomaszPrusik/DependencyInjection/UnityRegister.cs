@@ -7,6 +7,7 @@ using DomainModel;
 using DomainModel.interfaces;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
+using TomaszPrusik.ModelOperations;
 
 namespace TomaszPrusik.DependencyInjection
 {
@@ -17,6 +18,7 @@ namespace TomaszPrusik.DependencyInjection
 			IUnityContainer container = new UnityContainer();
 
 			container.RegisterType<IFundService, FundService>();
+		    container.RegisterType<IOperations, Operations>();
 			ServiceLocator.SetLocatorProvider( () => new UnityServiceLocator( container ) );
 		}
 	}

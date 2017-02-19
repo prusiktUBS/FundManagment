@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,10 @@ namespace DomainModel
 {
     public class FundService : IFundService
     {
-        private readonly double _equityTc = FromPercentageString(ConfigurationManager.AppSettings["equityTc"]);
-        private readonly double _bondTc = FromPercentageString(ConfigurationManager.AppSettings["bondTc"]);
+        private readonly double _equityTc = Convert.ToDouble(ConfigurationManager.AppSettings["equityTc"]);
+        private readonly double _bondTc = Convert.ToDouble(ConfigurationManager.AppSettings["bondTc"]);        
 
-        public static double FromPercentageString(string value)
-        {
-            return double.Parse(value.Replace("%", "")) / 100;
-        }
-
-        public double SetMarketValue(double price, int quantity)
+        public double SetMarketValue(double price, double quantity)
         {
             var marketValue = price * quantity;
             return marketValue;

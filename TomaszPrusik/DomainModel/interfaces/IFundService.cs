@@ -8,7 +8,7 @@ namespace DomainModel.interfaces
 {
     public interface IFundService
     {
-        double SetMarketValue(double price, int quantity);
+        double SetMarketValue(double price, double quantity);
         double SetTransactionCost(double marketValue, Type type);
         double SetStockWeight(double marketValue, double totalMarketValue);
     }

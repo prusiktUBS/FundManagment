@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomaszPrusik", "TomaszPrusi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{9142C82D-00EB-4F6A-96B9-9F8102667B78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManagerTests", "FundManagerTests\FundManagerTests.csproj", "{484A8F5E-460E-4485-8BF1-4D5B656BE2F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9142C82D-00EB-4F6A-96B9-9F8102667B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9142C82D-00EB-4F6A-96B9-9F8102667B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9142C82D-00EB-4F6A-96B9-9F8102667B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484A8F5E-460E-4485-8BF1-4D5B656BE2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484A8F5E-460E-4485-8BF1-4D5B656BE2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484A8F5E-460E-4485-8BF1-4D5B656BE2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484A8F5E-460E-4485-8BF1-4D5B656BE2F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

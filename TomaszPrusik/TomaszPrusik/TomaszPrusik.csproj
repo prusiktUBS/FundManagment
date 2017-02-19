@@ -81,7 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Validation\Validations.cs" />
     <Compile Include="DependencyInjection\UnityRegister.cs" />
+    <Compile Include="ModelOperations\IOperations.cs" />
+    <Compile Include="ModelOperations\Operations.cs" />
     <Compile Include="ViewModels\FundViewModel.cs" />
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

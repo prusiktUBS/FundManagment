@@ -9,6 +9,7 @@ namespace DomainModel
     public enum Type
     {
         Equity,
-        Bond
+        Bond,
+        Total
     }
 }
